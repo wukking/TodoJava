@@ -26,6 +26,29 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    flavorDimensions "package"
+    productFlavors {
+        Base {
+            dimension "package"
+            def appName = "主包"
+            //替换appName，通过替换strings中的资源名字，一定要删除strings中的app_name,否则会报错
+            resValue "string", "app_simple_name", appName
+        }
+        Fake {
+            dimension "package"
+            def appName = "第一马甲包"
+            //替换appName，通过替换strings中的资源名字，一定要删除strings中的app_name,否则会报错
+            resValue "string", "app_simple_name", appName
+        }
+        Mask {
+            dimension "package"
+            def appName = "第二马甲包"
+            //替换appName，通过替换strings中的资源名字，一定要删除strings中的app_name,否则会报错
+            resValue "string", "app_simple_name", appName
+        }
+    }
+
 }
 
 dependencies {
